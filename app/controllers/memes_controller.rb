@@ -1,5 +1,5 @@
 class MemesController < ApplicationController
-  before_action :set_meme, only: %i[ show edit update destroy ]
+  before_action :set_meme, only: %i[ show edit update destroy]
 
   # GET /memes or /memes.json
   def index
@@ -17,6 +17,11 @@ class MemesController < ApplicationController
 
   # GET /memes/1/edit
   def edit
+  end
+
+  def random
+    # @randitem = @items[rand(items.count)]
+     @randmeme = Meme.random_meme
   end
 
   # POST /memes or /memes.json
