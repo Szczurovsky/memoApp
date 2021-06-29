@@ -38,7 +38,7 @@ class MemesController < ApplicationController
   def update
     respond_to do |format|
       if @meme.update(meme_params)
-        format.html { redirect_to @meme, notice: "Meme was successfully updated." }
+        format.html { redirect_to @meme, notice: "Meme was successfully updateds." }
         format.json { render :show, status: :ok, location: @meme }
       else
         format.html { render :edit, status: :unprocessable_entity }
