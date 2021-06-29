@@ -5,5 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-(1..100).each {|i| Meme.create(title: i, picture: "./public/pictures/#{i}.png")}
+Meme.destroy_all
+(1..100).each {|i| Meme.create(title: i, picture: Rails.root.join("public/pictures/#{i}.png").open)}
 p "Created #{Meme.count} memess"
