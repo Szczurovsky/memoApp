@@ -1,0 +1,11 @@
+= simple_form_for @meme do |f|
+  .card style="width: 18rem;"
+    .card-body
+      .card-title
+        = f.label :title
+        = f.text_field :title
+      .card-text
+        = f.label :picture
+        = f.file_field :picture
+      a href="#" class="btn btn-secondary"
+        = f.button :submit
