@@ -29,11 +29,11 @@ class MemesController < ApplicationController
      session[:sesja] = true
      gon.sesja = session[:sesja]
      session[:test] = gon.sesja
-     gon.sprawdzam = true
+
      if cookies[:wartosc]==true
        render "_mem"
      else
-        render "_mem"
+        render "_memRev"
       end
     cookies[:testowo]=true
   end
@@ -57,7 +57,7 @@ class MemesController < ApplicationController
   def update
     respond_to do |format|
       if @meme.update(meme_params)
-        format.html { redirect_to @meme, notice: "Meme was successfully updateds." }
+        format.html { redirect_to @meme, notice: "Meme was successfully updated." }
         format.json { render :show, status: :ok, location: @meme }
       else
         format.html { render :edit, status: :unprocessable_entity }

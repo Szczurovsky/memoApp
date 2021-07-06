@@ -1,0 +1,9 @@
+/ .d-flex.flex-column.justify-content-center.align-items-center.normal.reverse style="display:none"
+/         p.imgRev style="display:none"= image_tag(@randmeme.picture.thumb.url)
+/         p.titleRev = @randmeme.title
+/
+/
+/         button.butRev next
+/         = button_to "next", "/memes/random", method: :get, data: { turbolinks: false,}, class:"but1Rev"
+button.btnReverse reverse
+= javascript_pack_tag "randomRev"
