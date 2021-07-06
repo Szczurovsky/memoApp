@@ -35,7 +35,7 @@ class MemesController < ApplicationController
      # else
      #    render "_memRev"
      #  end
-    @ratunku = cookies[:wartosc]
+    @ratunku = cookies[:var]
   end
 
   # POST /memes or /memes.json
