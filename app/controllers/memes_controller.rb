@@ -30,12 +30,12 @@ class MemesController < ApplicationController
      gon.sesja = session[:sesja]
      session[:test] = gon.sesja
 
-     if cookies[:wartosc]==true
-       render "_mem"
-     else
-        render "_memRev"
-      end
-    cookies[:testowo]=true
+     # if cookies[:wartosc]
+     #   render "_mem"
+     # else
+     #    render "_memRev"
+     #  end
+    @ratunku = cookies[:wartosc]
   end
 
   # POST /memes or /memes.json

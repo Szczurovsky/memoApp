@@ -1,4 +1,5 @@
-
-
-
+-if cookies[:wartosc].blank?
+  =render "mem"
+-else
+  =render "memRev"
 = javascript_pack_tag "my_js"

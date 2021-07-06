@@ -12,9 +12,11 @@ function hideBut(){
     btn1.style.display = "block"
 
 }
-function reverseLearn() {
 
+function reverseLearn() {
+//
   // document.cookie = `wartosc=!${gon.sprawdzam}; SameSite=lax`;
-document.cookie = `wartosc=false; SameSite=lax`;
+document.cookie = `wartosc=n; SameSite=lax`;
 console.log("dzialam")
 }
+//

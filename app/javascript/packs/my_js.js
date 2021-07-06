@@ -21,8 +21,7 @@ function hideBut(){
 function reverseLearn() {
 //
   // document.cookie = `wartosc=!${gon.sprawdzam}; SameSite=lax`;
-document.cookie = `wartosc=false; SameSite=lax`;
+document.cookie = `wartosc=n; SameSite=lax`;
 console.log("dzialam")
 }
 //
-// console.log(gon.sprawdzam)
