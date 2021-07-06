@@ -4,6 +4,7 @@ class MemesController < ApplicationController
   # GET /memes or /memes.json
   def index
     @memes = Meme.all
+    @memeColl = Meme.first(5)
   end
 
   # GET /memes/1 or /memes/1.json
@@ -22,6 +23,19 @@ class MemesController < ApplicationController
   def random
     # @randitem = @items[rand(items.count)]
      @randmeme = Meme.random_meme
+     @testowo = false;
+     gon.mem = @randmeme
+     gon.testowo = true
+     session[:sesja] = true
+     gon.sesja = session[:sesja]
+     session[:test] = gon.sesja
+     gon.sprawdzam = true
+     if cookies[:wartosc]==true
+       render "_mem"
+     else
+        render "_mem"
+      end
+    cookies[:testowo]=true
   end
 
   # POST /memes or /memes.json

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>MemoApp</title>
+    <%= include_gon %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,5 +15,6 @@
   <body class="container">
     <%= render './memes/menu.html.erb' %>
     <%= yield %>
+    <%=javascript_pack_tag "my_js"%>
   </body>
 </html>

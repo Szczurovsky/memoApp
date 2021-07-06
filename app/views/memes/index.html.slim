@@ -1,4 +1,7 @@
 h1 Memy
-div class="„mems”"
-  == render @memes
-		= link_to 'New Meme', new_meme_path
+
+.container
+  .row.row-cols-md-5.row-cols-sm-3.row-cols-1.justify-content-center
+    = render @memes
+
+= link_to 'New Meme', new_meme_path

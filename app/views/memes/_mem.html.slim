@@ -1,0 +1,19 @@
+
+.d-flex.flex-column.justify-content-center.align-items-center.normal
+    p.img = image_tag(@randmeme.picture.thumb.url)
+    p.title style="display:none" = @randmeme.title
+
+    button.but next
+    = button_to "next", "/memes/random", method: :get, data: { turbolinks: false,}, style:"display:none", class:"but1"
+
+
+
+
+.d-flex.flex-column.justify-content-center.align-items-center.normal.reverse style="display:none"
+    p.imgRev style="display:none"= image_tag(@randmeme.picture.thumb.url)
+    p.titleRev style="display:none" = @randmeme.title
+
+
+    button.butRev style="display:none" next
+    button.but1Rev style="display:none" = button_to("next", "/memes/random",method: :get, data: { turbolinks: false })
+button.btnReverse reverse

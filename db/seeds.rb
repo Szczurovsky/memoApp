@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Meme.destroy_all
 (1..100).each {|i| Meme.create(title: i, picture: Rails.root.join("public/pictures/#{i}.png").open)}
-p "Created #{Meme.count} memess"
+p "Created #{Meme.count} memes"
