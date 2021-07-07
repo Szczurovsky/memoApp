@@ -29,7 +29,3 @@ function hideBut(){
 function setCookie(cName, cValue){
   document.cookie = cName + "=" + cValue + ";"
 }
-
-function hideRevBut(){
-
-}

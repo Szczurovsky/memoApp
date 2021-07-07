@@ -38,6 +38,10 @@ class MemesController < ApplicationController
     @ratunku = cookies[:var]
   end
 
+  def learn
+    gon.memes = Meme.all
+  end
+
   # POST /memes or /memes.json
   def create
     @meme = Meme.new(meme_params)

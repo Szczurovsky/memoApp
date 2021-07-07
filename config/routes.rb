@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :memes do
     collection do
       get "random"
+      get "learn"
     end
   end
+
 
 end
