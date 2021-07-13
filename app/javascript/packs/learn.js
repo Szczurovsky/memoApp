@@ -14,8 +14,8 @@ divNumber.innerHTML = numbers
 //   numberek
 // })
 const arrayOfUrls = []
-for (var i = 0; i < arrayNumbers.length; i++) {
-  for (var j = 0; j < gon.memes.length; j++) {
+for (let i = 0; i < arrayNumbers.length; i++) {
+  for (let j = 0; j < gon.memes.length; j++) {
     if(gon.memes[j].id==arrayNumbers[i]){
       arrayOfUrls.push({url:gon.memes[j].picture.thumb.url, id:gon.memes[j].id})
     }

@@ -30,16 +30,18 @@ class MemesController < ApplicationController
      gon.sesja = session[:sesja]
      session[:test] = gon.sesja
 
-     # if cookies[:wartosc]
-     #   render "_mem"
-     # else
-     #    render "_memRev"
-     #  end
+
     @ratunku = cookies[:var]
   end
 
   def learn
     gon.memes = Meme.all
+  end
+
+  def learn_faster
+    @number = rand.to_s[2..11]
+    @slices = @number.scan(/.{2}/)
+    @memes = Meme.where(title: @slices).group_by(&:title)
   end
 
   # POST /memes or /memes.json

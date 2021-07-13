@@ -1,0 +1,9 @@
+.container
+  .divNumber
+    p =@number
+    p =@slices
+
+.d-flex.flex-row.flexContainer
+  =render @slices.map{|s| @memes[s].first}
+
+/ = javascript_pack_tag "learn"
