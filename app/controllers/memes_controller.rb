@@ -1,5 +1,6 @@
 class MemesController < ApplicationController
   before_action :set_meme, only: %i[ show edit update destroy]
+  before_action :authenticate_user!, only:[:new, :create]
 
   # GET /memes or /memes.json
   def index

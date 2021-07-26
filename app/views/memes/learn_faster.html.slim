@@ -4,6 +4,6 @@
     p =@slices
 
 .d-flex.flex-row.flexContainer
-  =render @slices.map{|s| @memes[s].first}
+  =render @slices.map{|s| @memes[s].try(:first)}.select{|s| !s.nil?}
 
 / = javascript_pack_tag "learn"
