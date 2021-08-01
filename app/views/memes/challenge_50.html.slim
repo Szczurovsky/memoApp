@@ -1,0 +1,7 @@
+.container
+  .divNumber
+    p =@number
+    p =@slices
+
+.d-flex.flex-row.flexContainer.flex-wrap
+  =render @slices.map{|s| @memes[s].try(:first)}.select{|s| !s.nil?}

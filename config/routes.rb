@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       get "random"
       get "learn"
       get "learn_faster"
+      get "challenge_20"
+      get "challenge_50"
     end
   end
 

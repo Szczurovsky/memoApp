@@ -40,10 +40,23 @@ class MemesController < ApplicationController
   end
 
   def learn_faster
-    @number = rand.to_s[2..11]
+    @number = 10.times.map{rand(10)}.join
     @slices = @number.scan(/.{2}/)
     @memes = Meme.where(title: @slices).group_by(&:title)
   end
+
+  def challenge_20
+    @number = 20.times.map{rand(10)}.join
+    @slices = @number.scan(/.{2}/)
+    @memes = Meme.where(title: @slices).group_by(&:title)
+  end
+
+  def challenge_50
+    @number = 50.times.map{rand(10)}.join
+    @slices = @number.scan(/.{2}/)
+    @memes = Meme.where(title: @slices).group_by(&:title)
+  end
+
 
   # POST /memes or /memes.json
   def create
