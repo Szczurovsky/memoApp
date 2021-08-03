@@ -1,0 +1,14 @@
+.container
+  .divNumber
+    p =@number
+    p =@slices
+.stopwatch
+
+
+  div id="seconds" 00
+  button id="button-start" start
+  button id="button-stop" stop
+  button id="button-reset" reset
+.visibility
+  = render @slices.map{|s| @memes[s].try(:first)}.select{|s| !s.nil?}
+= javascript_pack_tag "stopwatch"

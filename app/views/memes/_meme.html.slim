@@ -4,6 +4,6 @@
        = meme.title
        if(meme.picture.url)
          = image_tag(meme.picture.thumb.url)
-       = link_to 'Show', meme
-       = link_to 'Edit', edit_meme_path(meme)
-       = link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' }
+       / = link_to 'Show', meme
+       / = link_to 'Edit', edit_meme_path(meme)
+       / = link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' }

@@ -4,7 +4,11 @@ class MemesController < ApplicationController
 
   # GET /memes or /memes.json
   def index
-    @memes = Meme.all
+    if user_signed_in?
+    @current_user = current_user.id
+  end
+    # @memes = Meme.all
+    @memes= Meme.where(user_id: current_user)
     @memeColl = Meme.first(5)
   end
 
@@ -45,6 +49,14 @@ class MemesController < ApplicationController
     @memes = Meme.where(title: @slices).group_by(&:title)
   end
 
+
+    def challenge_1
+      @text = "Ssss"
+      @number = 2.times.map{rand(10)}.join
+      @slices = @number.scan(/.{2}/)
+      @memes = Meme.where(title: @slices).group_by(&:title)
+    end
+
   def challenge_20
     @number = 20.times.map{rand(10)}.join
     @slices = @number.scan(/.{2}/)
@@ -61,7 +73,7 @@ class MemesController < ApplicationController
   # POST /memes or /memes.json
   def create
     @meme = Meme.new(meme_params)
-
+    @meme.user_id = (current_user.id)
     respond_to do |format|
       if @meme.save
         format.html { redirect_to @meme, notice: "Meme was successfully created." }

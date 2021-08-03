@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get "learn_faster"
       get "challenge_20"
       get "challenge_50"
+      get "challenge_1"
     end
   end
 
