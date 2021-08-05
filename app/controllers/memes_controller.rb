@@ -50,19 +50,19 @@ class MemesController < ApplicationController
   end
 
 
-  def challenge
-    @size = params[:size] || 1
-    @challenge = current_user.challenges.create :size=>@size.to_i, :number=>@size.to_i.times.map{rand(10)}.join
-
-  end
-  def check
-    @challenge_id = Challenge.find(params[:challenge_id])
-    @result = params[:result]
-    if @challenge_id.number == @result
-      @challenge_id.time = Time.now - @challenge_id.created_at
-    end
-
-  end
+  # def challenge
+  #   @size = params[:size] || 1
+  #   @challenge = current_user.challenges.create :size=>@size.to_i, :number=>@size.to_i.times.map{rand(10)}.join
+  #
+  # end
+  # def check
+  #   @challenge_id = Challenge.find(params[:challenge_id])
+  #   @result = params[:result]
+  #   if @challenge_id.number == @result
+  #     @challenge_id.time = Time.now - @challenge_id.created_at
+  #   end
+  #
+  # end
   # POST /memes or /memes.json
   def create
     @meme = Meme.new(meme_params)
