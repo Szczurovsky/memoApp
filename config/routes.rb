@@ -9,6 +9,10 @@ Rails.application.routes.draw do
       get "challenge_20"
       get "challenge_50"
       get "challenge_1"
+      get "/challenge", to: "memes#challenge"
+      # get '/challenge/:challenge_id', to: 'check#show', as: 'check'
+      post :check
+
     end
   end
 

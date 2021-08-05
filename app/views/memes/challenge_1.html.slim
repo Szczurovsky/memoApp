@@ -1,14 +1,31 @@
 .container
   .divNumber
     p =@number
-    p =@slices
+    / p =@slices
 .stopwatch
 
 
   div id="seconds" 00
-  button id="button-start" start
-  button id="button-stop" stop
+  button id="button-start" Zapamiętane
+  button id="button-stop" Ukończone
   button id="button-reset" reset
 .visibility
-  = render @slices.map{|s| @memes[s].try(:first)}.select{|s| !s.nil?}
+  / = render @slices.map{|s| @memes[s].try(:first)}.select{|s| !s.nil?}
+.form
+  / = simple_form_for @meme do |f|
+  /   .card style="width: 18rem;"
+  /     .card-body
+  /       .card-title
+  /         = f.label :title
+  /         = f.text_field :title
+  /       .card-text
+  /         = f.label :picture
+  /         = f.file_field :picture
+  /       .btn.btn-secondary.btn-xs
+  /         = f.button :submit
+  = form_tag("/memes/random", method: "post")
+    = label_tag(:q, "Search for:")
+    = text_field_tag(:q)
+    = submit_tag("Search")
+
 = javascript_pack_tag "stopwatch"

@@ -14,6 +14,20 @@
           <li class="nav-item">
             <a class="nav-link" href="<%= new_meme_path %>">Nowy mem</a>
           </li>
+          <li class="nav-item">
+            <%= link_to "Challenge 10", {:controller => "memes", :action => "challenge", :size =>"10"}, class:"nav-link"%>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Challenge 20", {:controller => "memes", :action => "challenge", :size =>"20"}, class:"nav-link"%>
+
+          </li>
+          <li class="nav-item">
+            <%= link_to "Challenge 50", {:controller => "memes", :action => "challenge", :size =>"50"}, class:"nav-link"%>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= challenge_memes_path %>">Challenge Test</a>
+          </li>
         <% end %>
         <li class="nav-item">
           <a class="nav-link" href="<%= learn_memes_path %>">Learn</a>
@@ -21,15 +35,7 @@
         <li class="nav-item">
           <a class="nav-link" href="<%= learn_faster_memes_path %>">Learn Faster Option</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<%= challenge_20_memes_path %>">Challenge 20</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<%= challenge_50_memes_path %>">Challenge 50</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<%= challenge_1_memes_path %>">Challenge 1 Test</a>
-        </li>
+
       </ul>
     </div>
   </div>

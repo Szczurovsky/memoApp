@@ -1,0 +1,27 @@
+.container
+  .divNumber
+    p =@challenge.number
+
+.stopwatch
+
+
+  div id="seconds" 00
+  / button id="button-start" Zapamiętane
+  / = link_to "Zapamiętane", check_memes_path(@challenge_id)
+  button id="button-stop" Ukończone
+  button id="button-reset" style="display:none" reset
+.visibility
+/ klikniecie zapamietane powinien wyslac akcje, wtedy powinna
+/ byc informacja z czasem zwrotnym wykonania challenges
+
+
+/ metoda check powinna ustawic status poprawne lub nie
+.form
+
+  = form_tag("/memes/check", method: "post")
+    = label_tag(:result, "Wynik:")
+    / = hidden_field_tag(:challenge_id, @challenge.id)
+    = text_field_tag(:result)
+    = submit_tag("Wyślij")
+
+= javascript_pack_tag "stopwatch"
