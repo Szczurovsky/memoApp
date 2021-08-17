@@ -3,16 +3,19 @@ window.onload = function () {
   Interval = setInterval(startTimer, 10);
   let seconds = 0;
   let tens = 0;
+  const alert = document.querySelector(".alert-primary")
   const imagesShow = document.querySelector(".visibility")
   const appendSeconds = document.getElementById("seconds")
   const buttonStart = document.getElementById('button-start');
   const buttonStop = document.getElementById('button-stop');
   const buttonReset = document.getElementById('button-reset');
+  const form = document.querySelector(".form")
   let Interval ;
   imagesShow.style.display="block";
 
   buttonStart.onclick = function() {
-    imagesShow.style.display="none"
+    form.style.display = "block"
+  alert.style.display="none"
      // clearInterval(Interval);
      // Interval = setInterval(startTimer, 10);
   }

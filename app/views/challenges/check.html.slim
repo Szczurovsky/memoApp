@@ -1,2 +1,10 @@
-=@challenge_id.time
-=@challenge_id.status
+
+-if @challenge_id.status == "poprawne"
+  div class="alert alert-success" role="alert"
+    =@message
+    =@challenge_id.user.email
+  div class="alert alert-dark" role="alert"
+    ="Czas jaki uzyskałeś wykonując wyzwanie to #{@challenge_id.time}s "
+-else
+  div class="alert alert-danger" role="alert"
+    =@message

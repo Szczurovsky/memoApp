@@ -6,5 +6,10 @@ class User < ApplicationRecord
   has_many :challenges
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
+  # before_validation :best_result
+
+  def self.best_result(user, sizer)
+    Challenge.joins(:user).where(user_id: user).where(size: sizer).where.not(time: nil).all.order("time ASC")
+  end
 
 end

@@ -1,25 +1,24 @@
 .container
-  .divNumber
-    p =@challenge.number
-    p id:
-    =@challenge.id
+div class="alert alert-primary" role="alert"
+ =@challenge.number
+
 .stopwatch
 
 
   div id="seconds" 00
-  / button id="button-start" Zapamiętane
-  / = link_to "Zapamiętane", check_memes_path
-  button id="button-stop" Ukończone
+  button id="button-start" class="zapamietane" Zapamiętane
+
+  button id="button-stop" style="display:none" Ukończone
   button id="button-reset" style="display:none" reset
 .visibility
 / klikniecie zapamietane powinien wyslac akcje, wtedy powinna
 / byc informacja z czasem zwrotnym wykonania challenges
 
 
-/ metoda check powinna ustawic status poprawne lub nie
-.form
 
-  = form_tag("/challenges/check", method: "post")
+/ metoda check powinna ustawic status poprawne lub nie
+.form style="display:block"
+    = form_tag("/challenges/check", method: "post")
     = label_tag(:result, "Wynik:")
     = hidden_field_tag(:challenge_id, @challenge.id)
     = text_field_tag(:result)

@@ -15,17 +15,19 @@
             <a class="nav-link" href="<%= new_meme_path %>">Nowy mem</a>
           </li>
           <li class="nav-item">
-            <%= link_to "Challenge 10", {:controller => "challenges", :action => "challenge", :size =>"10"}, class:"nav-link"%>
+            <%= link_to "Challenge 10", challenge_challenges_path(size: 10), class:"nav-link"%>
           </li>
 
           <li class="nav-item">
-            <%= link_to "Challenge 20", {:controller => "challenges", :action => "challenge", :size =>"20"}, class:"nav-link"%>
+            <%= link_to "Challenge 20", {controller: "challenges", :action => "challenge", :size =>"20"}, class:"nav-link challenge20"%>
 
           </li>
           <li class="nav-item">
             <%= link_to "Challenge 50", {:controller => "challenges", :action => "challenge", :size =>"50"}, class:"nav-link"%>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link" href="<%= challenges_path %>">Tablica wyników</a>
+          </li>
         <% end %>
         <li class="nav-item">
           <a class="nav-link" href="<%= learn_memes_path %>">Learn</a>

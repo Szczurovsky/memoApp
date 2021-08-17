@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'users/index'
   devise_for :users
   root "memes#index"
   resources :memes do
@@ -7,18 +8,11 @@ Rails.application.routes.draw do
       get "random"
       get "learn"
       get "learn_faster"
-      # get "challenge_20"
-      # get "challenge_50"
-      # get "challenge_1"
-      # get "challenge", to: "memes#challenge"
-      # # get :check
-      # # get '/challenge/:challenge_id', to: 'check#show', as: 'check'
-      # post :check
-
     end
   end
 resources :challenges do
   collection do
+    get "index", to: "challenges#index"
     get "challenge", to: "challenges#challenge"
     post "check", to: "challenges#check"
   end

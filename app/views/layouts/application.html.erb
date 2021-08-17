@@ -16,10 +16,15 @@
     <body class="container">
       <%= render partial:'memes/menu' %>
       <div class="d-inline-flex" style="margin-top:20px;">
-        <%= button_to "Register", new_user_registration_path, method: :get, class:"btn btn-dark position-relative top-0 end-0 register"%>
-        <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-light position-relative top-30 end-0"%>
-        <%= button_to "Login", new_user_session_path, method: :get, class:"btn btn-light position-relative top-30 end-0 login"%></div>
+        <% if user_signed_in? %>
+          <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-light position-relative top-30 end-0"%>
 
+        <% else %>
+          <%= button_to "Register", new_user_registration_path, method: :get, class:"btn btn-dark position-relative top-0 end-0 register"%>
+
+          <%= button_to "Login", new_user_session_path, method: :get, class:"btn btn-light position-relative top-30 end-0 login"%>
+        <% end %>
+      </div>
       <div class="notice"><%= notice %></div>
       <div class="alert"><%= alert %></div>
 
