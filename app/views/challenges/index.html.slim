@@ -1,38 +1,60 @@
-/ = @test1
-/
-/ table class="table"
-/   thead
-/     tr
-/       th scope="col" Challenge number
-/       th scope="col" User mail
-/       th scope="col" Challenge time
-/       th scope="col" Challenge size
-/       -@challenges.each do |challenge|
-/         tbody
-/           tr
-/             th scope="row"
-/               =challenge.id
-/             td
-/               =challenge.user.email
-/             td
-/               =("#{challenge.time}" + "s" )
-/             td
-/               =challenge.size
+
 
 
 table class="table"
   thead
     tr
-      th scope="col" Challenge number
+
       th scope="col" User mail
       th scope="col" Challenge time
       th scope="col" Challenge size
-      -@test.each do |challenge|
+      -@challenges10.each do |challenge|
         tbody
           tr
             th scope="row"
-              =challenge.id
+
+            
+              =challenge.user.email
             td
+              =("#{challenge.time}" + "s" )
+            td
+              =challenge.size
+
+
+table class="table"
+  thead
+    tr
+
+      th scope="col" User mail
+      th scope="col" Challenge time
+      th scope="col" Challenge size
+      -@challenges20.each do |challenge|
+        tbody
+          tr
+            th scope="row"
+
+
+              =challenge.user.email
+            td
+              =("#{challenge.time}" + "s" )
+            td
+              =challenge.size
+
+
+
+table class="table"
+  thead
+    tr
+
+      th scope="col" User mail
+      th scope="col" Challenge time
+      th scope="col" Challenge size
+      -@challenges50.each do |challenge|
+        tbody
+          tr
+            th scope="row"
+
+
               =challenge.user.email
             td
               =("#{challenge.time}" + "s" )

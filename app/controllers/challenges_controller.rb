@@ -1,10 +1,11 @@
 class ChallengesController < ApplicationController
 
 
-  def index
+  def rank
     @challenges = Challenge.where(status: "poprawne")
-    @test = User.best_result(current_user.id,20)
-
+    @challenges10 = User.best_result(10)
+    @challenges20 = User.best_result(20)
+    @challenges50 = User.best_result(50)
   end
   def challenge
     @size = params[:size] || 1
